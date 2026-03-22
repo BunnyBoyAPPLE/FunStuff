@@ -135,7 +135,8 @@ body::after {
   z-index: -4;
   pointer-events: none;
 
-  background: url('https://i.imgur.com/9yG7z8S.png'); /* tiny star texture */
+  background: url('https://raw.githubusercontent.com/itsjusttrizzy/cdn-assets/main/stars/starfield-tiny.png');
+/* tiny star texture */
   opacity: 0.4;
   animation: starDrift 40s linear infinite;
 }
