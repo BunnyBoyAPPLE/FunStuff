@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.neon-header {
+  padding: 20px;
+  background: linear-gradient(90deg, #ff00ff, #00eaff, #00ff6a);
+  animation: glowShift 6s infinite alternate;
+}
+
+@keyframes glowShift {
+  0% { filter: drop-shadow(0 0 10px #ff00ff); }
+  50% { filter: drop-shadow(0 0 10px #00eaff); }
+  100% { filter: drop-shadow(0 0 10px #00ff6a); }
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-shadow: 0 0 10px #fff;
+}
+
+.glow {
+  font-size: 50px;
+  text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  animation: pulse 2s infinite alternate;
+}
+
+.glow-small {
+  font-size: 28px;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+@keyframes pulse {
+  0% { text-shadow: 0 0 20px #ff00ff; }
+  100% { text-shadow: 0 0 40px #ff00ff; }
+}
+
+.hero {
+  margin-top: 100px;
+}
