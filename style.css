@@ -141,8 +141,9 @@ body::before {
   pointer-events: none;
 
   background:
-    radial-gradient(circle at var(--x, 50%) var(--y, 50%), #ff00ff33, transparent 60%),
-    radial-gradient(circle at calc(100% - var(--x, 50%)) calc(100% - var(--y, 50%)), #00eaff33, transparent 60%);
+    radial-gradient(circle at var(--x, 50%) var(--y, 50%), #ff00ff22, transparent 70%),
+    radial-gradient(circle at calc(100% - var(--x, 50%)) calc(100% - var(--y, 50%)), #00eaff22, transparent 70%);
+
   transition: background-position 0.2s ease-out;
 }
 
