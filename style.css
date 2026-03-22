@@ -171,7 +171,7 @@ body::before {
     radial-gradient(3px 3px at 70% 20%, #ffffff, transparent),
     radial-gradient(2px 2px at 40% 80%, #ffffff, transparent),
     radial-gradient(3px 3px at 90% 40%, #ffffff, transparent);
-  opacity: 0.9; /* brighter */
+  opacity: 1.0; /* brighter */
   animation: starDrift 35s linear infinite;
 }
 
