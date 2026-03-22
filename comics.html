@@ -20,6 +20,18 @@
 
 <h2>Your Comics</h2>
 <p>Add your chapters, images, or links here.</p>
+<script>
+document.addEventListener("mousemove", e => {
+  const dot = document.createElement("div");
+  dot.className = "trail-dot";
+  dot.style.left = e.pageX + "px";
+  dot.style.top = e.pageY + "px";
+  dot.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+  document.body.appendChild(dot);
+
+  setTimeout(() => dot.remove(), 500);
+});
+</script>
 
 </body>
 </html>
