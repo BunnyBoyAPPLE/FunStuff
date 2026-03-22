@@ -87,3 +87,25 @@ nav a:active {
   50% { transform: scale(0.85); filter: drop-shadow(0 0 10px #0ff); }
   100% { transform: scale(1); filter: drop-shadow(0 0 0px #0ff); }
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+
+  background: linear-gradient(120deg,
+    #ff00ff,
+    #00eaff,
+    #00ff6a,
+    #ff0099,
+    #00aaff
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
