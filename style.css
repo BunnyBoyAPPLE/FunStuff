@@ -152,28 +152,39 @@ body::before {
 .starfield {
   position: fixed;
   inset: 0;
-  z-index: -5;
+  z-index: -10; /* push it behind everything */
   pointer-events: none;
   overflow: hidden;
 }
 
-/* Two layers of stars for depth */
+/* Two bright layers of stars */
 .starfield::before,
 .starfield::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(2px 2px at 20% 30%, #ffffff, transparent),
-    radial-gradient(1px 1px at 80% 70%, #ffffff, transparent),
-    radial-gradient(2px 2px at 50% 90%, #ffffff, transparent),
-    radial-gradient(1px 1px at 10% 50%, #ffffff, transparent),
-    radial-gradient(2px 2px at 70% 20%, #ffffff, transparent),
-    radial-gradient(1px 1px at 40% 80%, #ffffff, transparent),
-    radial-gradient(2px 2px at 90% 40%, #ffffff, transparent);
-  opacity: 0.6;
-  animation: starDrift 40s linear infinite;
+    radial-gradient(3px 3px at 20% 30%, #ffffff, transparent),
+    radial-gradient(2px 2px at 80% 70%, #ffffff, transparent),
+    radial-gradient(3px 3px at 50% 90%, #ffffff, transparent),
+    radial-gradient(2px 2px at 10% 50%, #ffffff, transparent),
+    radial-gradient(3px 3px at 70% 20%, #ffffff, transparent),
+    radial-gradient(2px 2px at 40% 80%, #ffffff, transparent),
+    radial-gradient(3px 3px at 90% 40%, #ffffff, transparent);
+  opacity: 0.9; /* brighter */
+  animation: starDrift 35s linear infinite;
 }
+
+.starfield::after {
+  opacity: 0.5;
+  animation-duration: 60s;
+}
+
+@keyframes starDrift {
+  from { transform: translateY(0); }
+  to { transform: translateY(2000px); }
+}
+
 
 .starfield::after {
   opacity: 0.3;
