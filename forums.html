@@ -20,6 +20,18 @@
 
 <h2>Forums</h2>
 <p>This is a placeholder. I can help you add a real comment system when you're ready.</p>
+<script>
+document.addEventListener("mousemove", e => {
+  const dot = document.createElement("div");
+  dot.className = "trail-dot";
+  dot.style.left = e.pageX + "px";
+  dot.style.top = e.pageY + "px";
+  dot.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+  document.body.appendChild(dot);
+
+  setTimeout(() => dot.remove(), 500);
+});
+</script>
 
 </body>
 </html>
