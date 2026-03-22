@@ -4,6 +4,25 @@
 <meta charset="UTF-8">
 <title>Comics</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.comic-link {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #0ff;
+    color: #000;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 15px #0ff;
+    transition: 0.2s;
+}
+
+.comic-link:hover {
+    background: #0aa;
+    box-shadow: 0 0 25px #0ff;
+}
+</style>
+
 </head>
 
 <body>
@@ -55,6 +74,7 @@ document.addEventListener("mousemove", e => {
   document.documentElement.style.setProperty("--y", y + "%");
 });
 </script>
+<a class="comic-link" href="comic1-page1.html">Comic 1 — Start Reading</a>
 
 </body>
 </html>
