@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Comic 1 — Page 2</title>
+
 <style>
     body {
         margin: 0;
@@ -12,21 +13,40 @@
         color: white;
     }
 
-
-
-    /* Fog */
-    .fog {
+    /* ⭐ CSS STARFIELD */
+    .starfield {
         position: fixed;
-        width: 100%;
-        height: 100%;
-        background: url('https://i.imgur.com/8fK4h8F.png');
-        opacity: 0.15;
-        animation: fogMove 20s linear infinite;
-        z-index: -2;
+        inset: 0;
+        z-index: -5;
+        pointer-events: none;
+        overflow: hidden;
     }
-    @keyframes fogMove {
-        from { transform: translateX(0); }
-        to { transform: translateX(-200px); }
+
+    .starfield::before,
+    .starfield::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(2px 2px at 20% 30%, #ffffff, transparent),
+            radial-gradient(1px 1px at 80% 70?, #ffffff, transparent),
+            radial-gradient(2px 2px at 50% 90%, #ffffff, transparent),
+            radial-gradient(1px 1px at 10% 50%, #ffffff, transparent),
+            radial-gradient(2px 2px at 70% 20%, #ffffff, transparent),
+            radial-gradient(1px 1px at 40% 80%, #ffffff, transparent),
+            radial-gradient(2px 2px at 90% 40%, #ffffff, transparent);
+        opacity: 0.6;
+        animation: starDrift 40s linear infinite;
+    }
+
+    .starfield::after {
+        opacity: 0.3;
+        animation-duration: 70s;
+    }
+
+    @keyframes starDrift {
+        from { transform: translateY(0); }
+        to { transform: translateY(2000px); }
     }
 
     /* Grid */
@@ -82,10 +102,9 @@
     }
 </style>
 </head>
-<body>
 
-<div class="stars"></div>
-<div class="fog"></div>
+<body>
+<div class="starfield"></div>
 <div class="grid"></div>
 
 <div class="comic-frame">
