@@ -140,15 +140,12 @@ body::before {
   z-index: -2;
   pointer-events: none;
 
-  background: radial-gradient(circle at 30% 30%, #ff00ff33, transparent 60%),
-              radial-gradient(circle at 70% 70%, #00eaff33, transparent 60%);
-  animation: fogMove 12s ease-in-out infinite alternate;
+  background:
+    radial-gradient(circle at var(--x, 50%) var(--y, 50%), #ff00ff33, transparent 60%),
+    radial-gradient(circle at calc(100% - var(--x, 50%)) calc(100% - var(--y, 50%)), #00eaff33, transparent 60%);
+  transition: background-position 0.2s ease-out;
 }
 
-@keyframes fogMove {
-  from { transform: translate(0, 0); }
-  to { transform: translate(40px, -40px); }
-}
 .starfield {
   position: fixed;
   inset: 0;
