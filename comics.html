@@ -47,6 +47,14 @@ for (let i = 0; i < 40; i++) {
 <div class="starfield"></div>
 <div class="starfield"></div>
 <div class="starfield-foreground"></div>
+<script>
+document.addEventListener("mousemove", e => {
+  const x = (e.clientX / window.innerWidth) * 100;
+  const y = (e.clientY / window.innerHeight) * 100;
+  document.documentElement.style.setProperty("--x", x + "%");
+  document.documentElement.style.setProperty("--y", y + "%");
+});
+</script>
 
 </body>
 </html>
