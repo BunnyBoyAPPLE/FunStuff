@@ -128,18 +128,7 @@ body::before {
   from { transform: translateY(0); }
   to { transform: translateY(60px); }
 }
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -4;
-  pointer-events: none;
 
-  background: url('https://raw.githubusercontent.com/itsjusttrizzy/cdn-assets/main/stars/starfield-tiny.png');
-/* tiny star texture */
-  opacity: 0.4;
-  animation: starDrift 40s linear infinite;
-}
 
 @keyframes starDrift {
   from { background-position: 0 0; }
@@ -159,4 +148,39 @@ body::after {
 @keyframes fogMove {
   from { transform: translate(0, 0); }
   to { transform: translate(40px, -40px); }
+}
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Two layers of stars for depth */
+.starfield::before,
+.starfield::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(2px 2px at 20% 30%, #ffffff, transparent),
+    radial-gradient(1px 1px at 80% 70%, #ffffff, transparent),
+    radial-gradient(2px 2px at 50% 90%, #ffffff, transparent),
+    radial-gradient(1px 1px at 10% 50%, #ffffff, transparent),
+    radial-gradient(2px 2px at 70% 20%, #ffffff, transparent),
+    radial-gradient(1px 1px at 40% 80%, #ffffff, transparent),
+    radial-gradient(2px 2px at 90% 40%, #ffffff, transparent);
+  opacity: 0.6;
+  animation: starDrift 40s linear infinite;
+}
+
+.starfield::after {
+  opacity: 0.3;
+  animation-duration: 70s;
+}
+
+@keyframes starDrift {
+  from { transform: translateY(0); }
+  to { transform: translateY(2000px); }
 }
