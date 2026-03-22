@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comic 1 — Page 2</title>
+<style>
+    body {
+        margin: 0;
+        background: #050010;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+        color: white;
+    }
+
+    /* Starfield */
+    .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url('https://i.imgur.com/9aK0R0v.png');
+        opacity: 0.25;
+        z-index: -3;
+    }
+
+    /* Fog */
+    .fog {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url('https://i.imgur.com/8fK4h8F.png');
+        opacity: 0.15;
+        animation: fogMove 20s linear infinite;
+        z-index: -2;
+    }
+    @keyframes fogMove {
+        from { transform: translateX(0); }
+        to { transform: translateX(-200px); }
+    }
+
+    /* Grid */
+    .grid {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#0ff2, #0ff2),
+                    linear-gradient(90deg, #0ff2, #0ff2);
+        background-size: 40px 40px;
+        opacity: 0.05;
+        z-index: -1;
+    }
+
+    /* Comic container */
+    .comic-frame {
+        margin: 40px auto;
+        width: 90%;
+        max-width: 900px;
+        padding: 20px;
+        border: 4px solid #0ff;
+        border-radius: 20px;
+        box-shadow: 0 0 25px #0ff, 0 0 50px #0ff inset;
+        background: #0008;
+    }
+
+    .comic-frame img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    /* Navigation */
+    .nav-buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .nav-buttons a {
+        padding: 12px 25px;
+        background: #0ff;
+        color: #000;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 0 15px #0ff;
+        transition: 0.2s;
+        margin: 0 10px;
+    }
+
+    .nav-buttons a:hover {
+        background: #0aa;
+        box-shadow: 0 0 25px #0ff;
+    }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="fog"></div>
+<div class="grid"></div>
+
+<div class="comic-frame">
+    <img src="comics/comic1/comic1-page2.png" alt="Comic Page 2">
+</div>
+
+<div class="nav-buttons">
+    <a href="comic1-page1.html">← Previous Page</a>
+    <a href="comic1-page3.html">Next Page →</a>
+</div>
+
+<script>
+document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowLeft") {
+        window.location.href = "comic1-page1.html";
+    }
+    if (e.key === "ArrowRight") {
+        window.location.href = "comic1-page3.html";
+    }
+});
+</script>
+
+</body>
+</html>
